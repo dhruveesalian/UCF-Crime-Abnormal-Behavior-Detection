@@ -38,6 +38,14 @@ def load_model():
 
 
 model = load_model()
+transform = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize(
+        mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225]
+    )
+])
 st.set_page_config(
     page_title="UCF-Crime Abnormal Behaviour Detection",
     page_icon="🔍",
