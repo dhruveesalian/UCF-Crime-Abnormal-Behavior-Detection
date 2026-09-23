@@ -2,6 +2,8 @@
 
 A deep learning project for detecting abnormal behavior in surveillance-style images using the UCF-Crime dataset and a ResNet18 model.
 
+---
+
 ## 📌 Project Overview
 
 Abnormal behavior detection is an important task in intelligent surveillance systems. The goal of this project is to classify surveillance frames into two categories:
@@ -11,7 +13,7 @@ Abnormal behavior detection is an important task in intelligent surveillance sys
 
 The project uses **transfer learning with ResNet18** to learn visual patterns associated with abnormal events.
 
-The implementation is based on extracted frames from the **UCF-Crime dataset**.
+The implementation uses extracted image frames from the **UCF-Crime dataset**.
 
 ---
 
@@ -41,11 +43,12 @@ Authors:
 - Higinio Mora-Mora
 - Jorge Azorin-Lopez
 
-Journal of Sensor and Actuator Networks, 2025, 14, 69.
+**Journal:** Journal of Sensor and Actuator Networks  
+**Year:** 2025  
+**Volume:** 14  
+**Article:** 69
 
-DOI:
-
-https://doi.org/10.3390/jsan14040069
+**DOI:** https://doi.org/10.3390/jsan14040069
 
 The paper reviews deep learning approaches for abnormal behavior and event detection, including CNNs, autoencoders, transfer learning, and video-based architectures.
 
@@ -57,9 +60,7 @@ The paper reviews deep learning approaches for abnormal behavior and event detec
 
 The project uses the **UCF-Crime dataset**.
 
-The dataset contains surveillance videos representing different types of normal and abnormal activities.
-
-For this implementation, the Kaggle version of the dataset contains **extracted image frames**.
+For this implementation, the Kaggle version of the dataset contains **extracted image frames** from UCF-Crime videos.
 
 ### Classes
 
@@ -80,7 +81,7 @@ The dataset contains 14 classes:
 13. Stealing
 14. Vandalism
 
-For the binary classification experiment, the classes were grouped into:
+For this project, these classes were grouped into two categories:
 
 - **Normal**
 - **Abnormal**
@@ -123,36 +124,3 @@ UCF-Crime
     ├── Shoplifting
     ├── Stealing
     └── Vandalism
-
-### Confusion Matrix Visualization
-
-![UCF-Crime Confusion Matrix](UCF_Crime_Confusion_Matrix.png)
-
-### ROC Curve Visualization
-
-![UCF-Crime ROC Curve](UCF_Crime_ROC_Curve.png)
-
-## 📊 Confusion Matrix
-
-The final confusion matrix was:
-
-|                    | Predicted Normal | Predicted Abnormal |
-|--------------------|-----------------:|-------------------:|
-| Actual Normal      | 1312             | 688                |
-| Actual Abnormal    | 301              | 1699               |
-
-### Confusion Matrix Visualization
-
-![UCF-Crime Confusion Matrix](UCF_Crime_Confusion_Matrix.png)
-
----
-
-## 📉 ROC Curve
-
-The final model achieved:
-
-**ROC-AUC = 0.7927**
-
-### ROC Curve Visualization
-
-![UCF-Crime ROC Curve](UCF_Crime_ROC_Curve.png)
