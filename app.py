@@ -1,5 +1,11 @@
 import streamlit as st
-
+import torch
+import torch.nn as nn
+from torchvision import models
+from PIL import Image
+from torchvision import transforms
+import urllib.request
+import os
 st.set_page_config(
     page_title="UCF-Crime Abnormal Behaviour Detection",
     page_icon="🔍",
