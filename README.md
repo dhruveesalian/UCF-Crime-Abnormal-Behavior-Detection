@@ -123,3 +123,35 @@ UCF-Crime
     ├── Shoplifting
     ├── Stealing
     └── Vandalism
+### Confusion Matrix Visualization
+
+![UCF-Crime Confusion Matrix](UCF_Crime_Confusion_Matrix.png)
+
+### ROC Curve Visualization
+
+![UCF-Crime ROC Curve](UCF_Crime_ROC_Curve.png)
+
+## 📊 Confusion Matrix
+
+The final confusion matrix was:
+
+|                    | Predicted Normal | Predicted Abnormal |
+|--------------------|-----------------:|-------------------:|
+| Actual Normal      | 1312             | 688                |
+| Actual Abnormal    | 301              | 1699               |
+
+### Confusion Matrix Visualization
+
+![UCF-Crime Confusion Matrix](UCF_Crime_Confusion_Matrix.png)
+
+---
+
+## 📉 ROC Curve
+
+The final model achieved:
+
+**ROC-AUC = 0.7927**
+
+### ROC Curve Visualization
+
+![UCF-Crime ROC Curve](UCF_Crime_ROC_Curve.png)
