@@ -1,6 +1,4 @@
-Yes — if you mean the **full README code with the images included correctly**, use this entire version:
 
-````markdown
 # UCF-Crime Abnormal Behavior Detection
 
 A deep learning project for detecting abnormal behavior in surveillance-style images using the UCF-Crime dataset and a ResNet18 model.
