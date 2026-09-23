@@ -85,4 +85,14 @@ if uploaded_file is not None:
     )
 
     if st.button("🔎 Analyze Image"):
-        st.info("Model prediction will appear here.")
+    with st.spinner("Analyzing image..."):
+        prediction, confidence = predict_image(uploaded_file)
+
+    st.subheader("Result")
+
+    if prediction == "ABNORMAL":
+        st.error(f"🚨 Prediction: {prediction}")
+    else:
+        st.success(f"✅ Prediction: {prediction}")
+
+    st.write(f"**Model Confidence:** {confidence:.2f}%")
