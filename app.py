@@ -6,6 +6,38 @@ from PIL import Image
 from torchvision import transforms
 import urllib.request
 import os
+MODEL_URL = "https://github.com/dhruveesalian/UCF-Crime-Abnormal-Behavior-Detection/releases/download/v1.0/resnet18_ucf_crime_baseline.pth"
+
+MODEL_PATH = "resnet18_ucf_crime_baseline.pth"
+
+if not os.path.exists(MODEL_PATH):
+    with st.spinner("Loading trained model..."):
+        urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
+
+@st.cache_resource
+def load_model():
+    model = models.resnet18(weights=None)
+
+    num_features = model.fc.in_features
+
+    model.fc = nn.Sequential(
+        nn.Dropout(0.3),
+        nn.Linear(num_features, 1)
+    )
+
+    checkpoint = torch.load(
+        MODEL_PATH,
+        map_location="cpu",
+        weights_only=True
+    )
+
+    model.load_state_dict(checkpoint)
+    model.eval()
+
+    return model
+
+
+model = load_model()
 st.set_page_config(
     page_title="UCF-Crime Abnormal Behaviour Detection",
     page_icon="🔍",
