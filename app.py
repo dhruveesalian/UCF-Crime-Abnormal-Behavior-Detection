@@ -46,6 +46,23 @@ transform = transforms.Compose([
         std=[0.229, 0.224, 0.225]
     )
 ])
+def predict_image(image):
+    image = image.convert("RGB")
+    
+    image_tensor = transform(image).unsqueeze(0)
+
+    with torch.no_grad():
+        output = model(image_tensor)
+        probability = torch.sigmoid(output).item()
+
+    if probability >= 0.5:
+        prediction = "ABNORMAL"
+        confidence = probability * 100
+    else:
+        prediction = "NORMAL"
+        confidence = (1 - probability) * 100
+
+    return prediction, confidence
 st.set_page_config(
     page_title="UCF-Crime Abnormal Behaviour Detection",
     page_icon="🔍",
